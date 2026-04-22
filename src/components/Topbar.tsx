@@ -83,7 +83,7 @@ const Topbar: React.FC<TopbarProps> = ({ toggleMobileMenu }) => {
   };
 
   const handleUserImageClick = (): void => {
-    router.push("/editor/profile");
+    router.push("/editor/settings");
     setShowDropdown(false);
   };
 
@@ -98,7 +98,7 @@ const Topbar: React.FC<TopbarProps> = ({ toggleMobileMenu }) => {
 
   const handleLogout = (): void => {
     TokenService.clearTokens();
-    router.push("/editor/login");
+    router.push("/");
     setShowDropdown(false);
   };
 
