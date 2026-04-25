@@ -1,4 +1,3 @@
-// api.ts
 export const BASE_URL = "https://katheleen-unerrant-consolingly.ngrok-free.dev";
 
 export const API_ENDPOINTS = {
@@ -20,4 +19,11 @@ export const API_ENDPOINTS = {
   STORY_REJECT: (id: string) => `/api/v1/story/editor/reject/${id}`,
   STORY_REQUEST_REVISION: (id: string) => `/api/v1/story/editor/request-revision/${id}`,
   STORY_EDIT: (id: string) => `/api/v1/story/editor/edit/${id}`,
+} as const;
+
+export const NOTIFICATION_ENDPOINTS = {
+  GET_ALL:       "/api/v1/notification",
+  MARK_READ:     (id: string) => `/api/v1/notification/${id}/read`,
+  MARK_ALL_READ: "/api/v1/notification/read-all",
+  DELETE:        (id: string) => `/api/v1/notification/${id}`,
 } as const;
