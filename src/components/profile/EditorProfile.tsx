@@ -18,7 +18,7 @@ import {
   getEditorProfile,
   editEditorProfile,
   changeEditorPassword,
-  EditorProfile,
+  type EditorProfile,
 } from "@/components/editorProfileApiClient";
 import { TokenService, logoutEditor } from "@/components/apiClient";
 
@@ -209,10 +209,10 @@ const EditorProfile: React.FC = () => {
       // Update user in localStorage with profile data
       const currentUser = TokenService.getUser();
       if (currentUser) {
-        TokenService.updateUser({
-          name: data.name,
-          profileImage: data.profileImage,
-        });
+       TokenService.updateUser({
+  name: data.name,
+  profileImage: data.profileImage ?? undefined,
+}); 
       }
     } catch (err: unknown) {
       console.error("Fetch profile error details:", err);
@@ -257,14 +257,14 @@ const EditorProfile: React.FC = () => {
       if (res.success) {
         // Sync user data in localStorage
         const currentUser = TokenService.getUser();
-        const updatedUser = {
-          ...currentUser,
-          id: res.data._id,
-          name: res.data.name,
-          email: res.data.email,
-          profileImage: res.data.profileImage,
-          role: "editor",
-        };
+       const updatedUser = {
+  ...currentUser,
+  id: res.data._id,
+  name: res.data.name,
+  email: res.data.email,
+  profileImage: res.data.profileImage ?? undefined,
+  role: "editor",
+};
         TokenService.setUser(updatedUser);
         
         setProfile(res.data);

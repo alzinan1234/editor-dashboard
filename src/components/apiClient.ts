@@ -204,7 +204,7 @@ export async function loginEditor(
       const userWithRole = { 
         ...data.data, 
         role: "editor",
-        profileImage: data.data.profileImage || null
+        profileImage: data.data.profileImage || undefined
       };
       TokenService.setUser(userWithRole);
     }
