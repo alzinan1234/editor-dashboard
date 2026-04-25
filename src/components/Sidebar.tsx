@@ -132,7 +132,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           </nav>
           
           {/* Logout Section */}
-          <div className="p-4 mt-auto mb-4">
+          {/* <div className="p-4 mt-auto mb-4">
              <button className={`
                 flex items-center gap-4 w-full h-[54px] rounded-[10px] bg-[#FFF0F0] text-[#FF5B5B] hover:bg-[#FFE5E5] transition-all
                 ${isCollapsed ? "justify-center px-0" : "px-6"}
@@ -144,7 +144,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                   </span>
                 )}
              </button>
-          </div>
+          </div> */}
         </div>
       </aside>
     </>
