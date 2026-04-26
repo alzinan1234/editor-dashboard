@@ -151,13 +151,13 @@ const Topbar: React.FC<TopbarProps> = ({ toggleMobileMenu }) => {
 
               {/* Menu Items */}
               <div className="py-1">
-                <button
+                {/* <button
                   onClick={() => { router.push("/editor/profile"); setShowDropdown(false); }}
                   className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                 >
                   <User size={16} className="text-gray-400" />
                   <span>My Profile</span>
-                </button>
+                </button> */}
 
                 <button
                   onClick={() => { router.push("/editor/settings"); setShowDropdown(false); }}
