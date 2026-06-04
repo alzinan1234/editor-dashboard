@@ -50,7 +50,7 @@ const getAuthHeaders = (): Record<string, string> => {
   const token = TokenService.getAccessToken();
   const headers: Record<string, string> = {
     "Content-Type":               "application/json",
-    "ngrok-skip-browser-warning": "true",
+   
   };
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;
